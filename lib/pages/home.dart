@@ -10,6 +10,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool flag_one= true;
+  bool flag_two= false;
+  bool flag_three= false;
+  bool flag_four= false;
+  bool flagg_one = true;
+  bool flagg_two = false;
+  bool flagg_three = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -163,9 +171,9 @@ class _HomeState extends State<Home> {
               physics: BouncingScrollPhysics(),
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: Container(
-                    height: 40,
+                    height: 45,
         
                     decoration: BoxDecoration(
                       color: Colors.blueGrey[600],
@@ -175,23 +183,230 @@ class _HomeState extends State<Home> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            height: 40,
-                              decoration: BoxDecoration(
-                                color: Colors.blue[900],
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
-                                child:  Center(child: Text("All",style: TextStyle(color: Colors.white),)),
+                          child: GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                flagg_one = true;
+                                flagg_two = false;
+                                flagg_two = false;
+                              });
+                            },
+                            child: Container(
+                              height: 45,
+                                decoration: BoxDecoration(
+                                    color: flagg_one == true?Colors.blue[900] :Colors.blueGrey[600],
+                                    borderRadius: BorderRadius.circular(10)
+                                ),
+                                  child:  Center(child: Text("All",style: TextStyle(color: Colors.white),)),
+                            ),
                           ),
                         ),
-                        Expanded(child: Center(child: Text("Stay",style: TextStyle(color: Colors.white)))),
-                        Expanded(child: Center(child: Text("Office",style: TextStyle(color: Colors.white))))
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                flagg_one = false;
+                                flagg_two = true;
+                                flagg_three = false;
+                              });
+                            },
+                            child: Container(
+                              height: 45,
+                              decoration: BoxDecoration(
+                                  color: flagg_two == true?Colors.blue[900] :Colors.blueGrey[600],
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              child:  Center(child: Text("Stay",style: TextStyle(color: Colors.white),)),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                flagg_one = false;
+                                flagg_two = false;
+                                flagg_three = true;
+                              });
+                            },
+                            child: Container(
+                              height: 45,
+                              decoration: BoxDecoration(
+                                  color: flagg_three == true?Colors.blue[900] :Colors.blueGrey[600],
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              child:  Center(child: Text("Office",style: TextStyle(color: Colors.white),)),
+                            ),
+                          ),
+                        ),
+
                       ],
                     ),
                   ),
                 ),
                 SizedBox(height: 20,),
                 SliderWidget(),
+                SizedBox(height: 20,),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            flag_one = true;
+                            flag_two = false;
+                            flag_three = false;
+                            flag_four = false;
+
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: flag_one == true?Colors.blue[900] :Colors.blueGrey[600],
+
+                          ),
+                          height:76,
+                          width: 150,
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset("assets/service.jpg"),
+                                ),
+                              ),
+                              Expanded(child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("Service Room",style: TextStyle(color:flag_one ==true ? Colors.white:Colors.white.withOpacity(0.5)),),
+                              ))
+                            ],
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            flag_one = false;
+                            flag_two = true;
+                            flag_three = false;
+                            flag_four = false;
+
+                          });
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: flag_two == true?Colors.blue[900] :Colors.blueGrey[600],
+
+                            ),
+                            height:76,
+                            width: 150,
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset("assets/service.jpg"),
+                                  ),
+                                ),
+                                Expanded(child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Duplex Room",style: TextStyle(color:flag_two==true ? Colors.white:Colors.white.withOpacity(0.5)),),
+                                ))
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            flag_one = false;
+                            flag_two = false;
+                            flag_three = true;
+                            flag_four = false;
+                          });
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: flag_three == true?Colors.blue[900] :Colors.blueGrey[600],
+
+                            ),
+                            height:76,
+                            width: 150,
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset("assets/service.jpg"),
+                                  ),
+                                ),
+                                Expanded(child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Service Room",style:  TextStyle(color:flag_three==true ? Colors.white:Colors.white.withOpacity(0.5)),),
+                                ))
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+
+                          setState(() {
+                            flag_one = false;
+                            flag_two = false;
+                            flag_three = false;
+                            flag_four = true;
+                          });
+
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: Container(
+
+                            decoration: BoxDecoration(
+
+                              borderRadius: BorderRadius.circular(10),
+                              color: flag_four == true?Colors.blue[900] :Colors.blueGrey[600],
+
+                            ),
+                            height:76,
+                            width: 150,
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset("assets/service.jpg"),
+                                  ),
+                                ),
+                                Expanded(child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Duplex Room",style:  TextStyle(color:flag_four==true ? Colors.white:Colors.white.withOpacity(0.5)),),
+                                ))
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
 
               ],
             ),
