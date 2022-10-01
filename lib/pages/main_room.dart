@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skyewall_project/pages/draw_two.dart';
+import 'package:skyewall_project/pages/widgets/draw_two.dart';
 
 class MainRoom extends StatefulWidget {
   final String url;
@@ -16,19 +16,22 @@ class _MainRoomState extends State<MainRoom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-            height:56,
-            decoration: BoxDecoration(
+          height: 56,
+          decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: Color(0xff311b70)
-            ),
+              color: Color(0xff311b70)),
           child: Row(
             children: [
               Expanded(
                   flex: 1,
-                  child: Icon(Icons.favorite_border_outlined,color: Colors.white,)),
+                  child: Icon(
+                    Icons.favorite_border_outlined,
+                    color: Colors.white,
+                  )),
               Expanded(
                 flex: 3,
                 child: Padding(
@@ -38,13 +41,17 @@ class _MainRoomState extends State<MainRoom> {
                       borderRadius: BorderRadius.circular(10),
                       color: Color(0xff4527a0),
                     ),
-                    child: Center(child: Text("Book Now",style: TextStyle(color: Colors.white),)),
+                    child: Center(
+                        child: Text(
+                      "Book Now",
+                      style: TextStyle(color: Colors.white),
+                    )),
                   ),
                 ),
               )
             ],
           ),
-     ),
+        ),
       ),
       appBar: AppBar(
         elevation: 0,
@@ -78,7 +85,7 @@ class _MainRoomState extends State<MainRoom> {
           Container(
             padding: EdgeInsets.all(20),
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height+20,
+            height: MediaQuery.of(context).size.height/1.2,
             decoration: const BoxDecoration(
               color: Color(0xff311b70),
               borderRadius: BorderRadius.only(
@@ -243,19 +250,28 @@ class _MainRoomState extends State<MainRoom> {
                           Icons.bed_outlined,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 10,),
-                        Text("1",style: TextStyle(color: Colors.white))
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("1", style: TextStyle(color: Colors.white))
                       ],
                     ),
-                    SizedBox(width: 20,),
+                    SizedBox(
+                      width: 20,
+                    ),
                     Row(
                       children: [
                         Icon(
                           Icons.bathtub_outlined,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 10,),
-                        Text("1",style: TextStyle(color: Colors.white),)
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "1",
+                          style: TextStyle(color: Colors.white),
+                        )
                       ],
                     ),
                   ],
@@ -291,12 +307,382 @@ class _MainRoomState extends State<MainRoom> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Description",style: TextStyle(fontWeight: FontWeight.bold),),
-                SizedBox(height: 20,),
-                const Text("Our fancy room with minimalism decoration will make you feel like home! We have an area for cooking and a cafe shop at ground floor. 24/7 security with our guards at front door will make you feel safe all the time. "),
+                Text(
+                  "Description",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                    "Our fancy room with minimalism decoration will make you feel like home! We have an area for cooking and a cafe shop at ground floor. 24/7 security with our guards at front door will make you feel safe all the time. "),
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Text("Facilities",
+                style: TextStyle(fontWeight: FontWeight.bold)),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 100),
+            child: Row(
+              children: [
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.elevator),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Elevator"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.water),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Hot Water"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 100),
+            child: Row(
+              children: [
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.fastfood),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Cooking Place"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.local_parking),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Parking"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Comments(234)",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      Text("4.5"),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      foregroundImage: AssetImage("assets/avatar.png"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Lisa Monica",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("5.0"),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey.withOpacity(0.5)),
+                  width: MediaQuery.of(context).size.width - 100,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                        child: Text(
+                            "So in love with this room. My host is very friendly and helpful")),
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      foregroundImage: AssetImage("assets/avatar.png"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Melia Strim",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("4.0"),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey.withOpacity(0.5)),
+                  width: MediaQuery.of(context).size.width - 100,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "The bath need fixing soon",
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      foregroundImage: AssetImage("assets/avatar.png"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Rachel Chu",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("5.0"),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey.withOpacity(0.5)),
+                  width: MediaQuery.of(context).size.width - 100,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                        child: Text(
+                            "I'm quite confident that every people with love this place like I do")),
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black)),
+                  child: Icon(Icons.arrow_back_outlined),
+                ),
+                Container(
+
+                  child: Text("1"),
+                ),
+                Container(
+
+                  child: Text("2"),
+                ),
+                Container(
+
+                  child: Text("3"),
+                ),
+                Container(
+
+                  child: Text("..."),
+                ),
+                Container(
+
+                  child: Text("5"),
+                ),
+                Container(
+
+                  child: Text("6"),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black)),
+                  child: Icon(Icons.arrow_forward),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 66,)
+
         ],
       ),
     );
