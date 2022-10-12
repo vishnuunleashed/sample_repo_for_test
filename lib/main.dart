@@ -5,7 +5,7 @@ void main() {
   runApp(const MyApp());
 }
 
-//the world is yours
+//the world is yours at any price
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
