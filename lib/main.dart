@@ -4,8 +4,8 @@ import 'package:skyewall_project/pages/home.dart';
 void main() {
   runApp(const MyApp());
 }
-//hello world 123
-123
+
+//the world is yours
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
